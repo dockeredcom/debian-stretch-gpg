@@ -1,0 +1,16 @@
+/*
+*
+*   Version 1.0.0
+*
+ */
+
+apply from: "idea.gradle"
+apply from: "docker.gradle"
+
+ext.docker = [
+        repository: "dockeredcom",
+        image: "debian-stretch-gpg",
+        container: "stretch1"
+]
+
+project.ext.initDirectories()
