@@ -10,9 +10,10 @@ ARG DEBIAN_FRONTEND=noninteractive
 RUN set -x && \ 
     apt-get update --yes && \ 
     apt-get upgrade --yes && \ 
-    apt-get install dirmngr gnupg2 --yes --no-install-recommends && \ 
+    apt-get install dirmngr gnupg2 curl --yes --no-install-recommends && \ 
     gpg --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys C2518248EEA14886 && \ 
     gpg -a --export C2518248EEA14886 | apt-key add - && \ 
+    curl -fsSL http://nginx.org/keys/nginx_signing.key | apt-key add - && \ 
     apt-get update --yes && \ 
     apt-get autoremove --yes && \ 
     apt-get clean && \ 
