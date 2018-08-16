@@ -1,10 +1,19 @@
 # Current versions
 
-- develop: 1.0.0
-- release (candidate): not yet released
-- master: not yet released
+- develop: 1.1.0
+- release (candidate): 1.0.0
+- master: 1.0.0
 
 # History
+
+## Version 1.1.0
+
+- Author: Yves Vindevogel
+- Date: 2018-08-16
+
+New key added
+
+- Adding key for Nginx.
 
 ## Version 1.0.0
 
