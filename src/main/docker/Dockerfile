@@ -1,4 +1,4 @@
-# Version 1.0.0
+# Version 1.1.0
 
 FROM dockeredcom/debian-stretch:latest
 
@@ -19,7 +19,7 @@ ARG DEBIAN_FRONTEND=noninteractive
 RUN apt-get update --yes
 RUN apt-get upgrade --yes
 
-RUN apt-get install dirmngr gnupg2 --yes --no-install-recommends
+RUN apt-get install dirmngr gnupg2 curl --yes --no-install-recommends
 
 # Yves Vindevogel
 # 2018-08-15
@@ -32,6 +32,12 @@ RUN apt-get install dirmngr gnupg2 --yes --no-install-recommends
 
 RUN gpg --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys C2518248EEA14886
 RUN gpg -a --export C2518248EEA14886 | apt-key add -
+
+# Yves Vindevogel
+# 2018-08-16
+# Key used by nginx
+
+RUN curl -fsSL http://nginx.org/keys/nginx_signing.key | apt-key add -
 
 RUN apt-get update --yes
 
